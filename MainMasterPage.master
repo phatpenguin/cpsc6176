@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs" Inherits="MainMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="MasterPageform" runat="server">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+        <asp:Image ID="LogoImage" runat="server" Height="111px" />
+                </td>
+                <td>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" 
+                        ShowStartingNode="False" />
+                    <asp:Menu ID="MainNavigationMenu" runat="server" BackColor="#F7F6F3" 
+                        DataSourceID="SiteMapDataSource" DynamicHorizontalOffset="2" 
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" 
+                        Orientation="Horizontal" RenderingMode="Table" StaticSubMenuIndent="10px" 
+                        style="margin-bottom: 0px" Width="117px">
+                        <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#F7F6F3" />
+                        <DynamicSelectedStyle BackColor="#5D7B9D" />
+                        <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#5D7B9D" />
+                    </asp:Menu>
+                </td>
+                <td>
+                    <asp:LinkButton ID="LoginLinkButton" runat="server" 
+                        onclick="LoginLinkButton_Click">Log In</asp:LinkButton>
+                    <asp:Panel ID="WelcomeMessagePanel" runat="server" Visible="False">
+                        Welcome,
+                        <asp:Label ID="UserNameLabel" runat="server"></asp:Label>
+                    </asp:Panel>
+                    <br />
+                </td>
+            </tr>
+        </table>
+    <div>
+        <asp:ContentPlaceHolder id="BodyContentPlaceHolder" runat="server">
+        
+            
+        
+        </asp:ContentPlaceHolder>
+        <br />
+        <asp:Literal ID="Literal" runat="server">Copyright 2012 Rub BBQ Company</asp:Literal>
+    </div>
+    </form>
+</body>
+</html>
