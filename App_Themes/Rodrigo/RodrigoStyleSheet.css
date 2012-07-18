@@ -1,0 +1,47 @@
+﻿body 
+{
+    background-color: Black;
+    width:66%;
+}
+
+.about-us-main
+{
+    color: White;
+    font-family:Microsoft Sans Serif;
+    font-size:medium;
+    font-weight:bold;
+    margin: 5px;
+}
+
+.about-us-footer
+{
+    position:fixed;
+    width:66%;
+    bottom:0;
+    color: White;
+    font-size:large;
+    text-align:center;
+    font-weight:bold;
+    font-family:Microsoft Sans Serif;
+}
+
+.about-us-redtext
+{
+    color:Red;
+}
+
+
+
+img.about-us-text
+{
+    height:45px;
+    width:190px;
+}
+
+img.family-pic
+{
+    float: right;
+    margin: 5px 15px;
+    height: 250px; 
+    width: 350px;
+}
