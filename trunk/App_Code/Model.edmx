@@ -1,0 +1,1061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="rub_bbqModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="rub_bbqModelStoreContainer">
+          <EntitySet Name="Address" EntityType="rub_bbqModel.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DinerType" EntityType="rub_bbqModel.Store.DinerType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Discount" EntityType="rub_bbqModel.Store.Discount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Menu" EntityType="rub_bbqModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuItem" EntityType="rub_bbqModel.Store.MenuItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuItemMap" EntityType="rub_bbqModel.Store.MenuItemMap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="rub_bbqModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderItem" EntityType="rub_bbqModel.Store.OrderItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderState" EntityType="rub_bbqModel.Store.OrderState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderType" EntityType="rub_bbqModel.Store.OrderType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payment" EntityType="rub_bbqModel.Store.Payment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentState" EntityType="rub_bbqModel.Store.PaymentState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentType" EntityType="rub_bbqModel.Store.PaymentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PhoneNumber" EntityType="rub_bbqModel.Store.PhoneNumber" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="State" EntityType="rub_bbqModel.Store.State" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="rub_bbqModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Address_State" Association="rub_bbqModel.Store.FK_Address_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_User" Association="rub_bbqModel.Store.FK_Address_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discount_Order" Association="rub_bbqModel.Store.FK_Discount_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Discount" EntitySet="Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItemMap_Menu" Association="rub_bbqModel.Store.FK_MenuItemMap_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="MenuItemMap" EntitySet="MenuItemMap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItemMap_MenuItem" Association="rub_bbqModel.Store.FK_MenuItemMap_MenuItem">
+            <End Role="MenuItem" EntitySet="MenuItem" />
+            <End Role="MenuItemMap" EntitySet="MenuItemMap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_DinerType" Association="rub_bbqModel.Store.FK_Order_DinerType">
+            <End Role="DinerType" EntitySet="DinerType" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrderState" Association="rub_bbqModel.Store.FK_Order_OrderState">
+            <End Role="OrderState" EntitySet="OrderState" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrderType" Association="rub_bbqModel.Store.FK_Order_OrderType">
+            <End Role="OrderType" EntitySet="OrderType" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_PaymentState" Association="rub_bbqModel.Store.FK_Order_PaymentState">
+            <End Role="PaymentState" EntitySet="PaymentState" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_User" Association="rub_bbqModel.Store.FK_Order_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_MenuItem" Association="rub_bbqModel.Store.FK_OrderItem_MenuItem">
+            <End Role="MenuItem" EntitySet="MenuItem" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Order" Association="rub_bbqModel.Store.FK_OrderItem_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Order" Association="rub_bbqModel.Store.FK_Payment_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_PaymentType" Association="rub_bbqModel.Store.FK_Payment_PaymentType">
+            <End Role="PaymentType" EntitySet="PaymentType" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhoneNumber_User" Association="rub_bbqModel.Store.FK_PhoneNumber_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="ZipCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="DinerType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="decimal" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="DiscountTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Price" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuItemMap">
+          <Key>
+            <PropertyRef Name="MenuID" />
+            <PropertyRef Name="MenuItemID" />
+          </Key>
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="MenuItemID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="OrderTypeId" Type="int" Nullable="false" />
+          <Property Name="DinerTypeId" Type="int" Nullable="false" />
+          <Property Name="PaymentStateId" Type="int" Nullable="false" />
+          <Property Name="OrderStateId" Type="int" Nullable="false" />
+          <Property Name="Memo" Type="text" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="MenuItemId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="UnitTax" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="Memo" Type="text" />
+        </EntityType>
+        <EntityType Name="OrderState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="OrderType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Nullable="false" Scale="10" />
+          <Property Name="Memo" Type="text" />
+        </EntityType>
+        <EntityType Name="PaymentState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="IsCreditCard" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Number" Type="nchar" Nullable="false" MaxLength="14" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Birthday" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Address_State">
+          <End Role="State" Type="rub_bbqModel.Store.State" Multiplicity="1" />
+          <End Role="Address" Type="rub_bbqModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_User">
+          <End Role="User" Type="rub_bbqModel.Store.User" Multiplicity="0..1" />
+          <End Role="Address" Type="rub_bbqModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discount_Order">
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="1" />
+          <End Role="Discount" Type="rub_bbqModel.Store.Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Discount">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItemMap_Menu">
+          <End Role="Menu" Type="rub_bbqModel.Store.Menu" Multiplicity="1" />
+          <End Role="MenuItemMap" Type="rub_bbqModel.Store.MenuItemMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuItemMap">
+              <PropertyRef Name="MenuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItemMap_MenuItem">
+          <End Role="MenuItem" Type="rub_bbqModel.Store.MenuItem" Multiplicity="1" />
+          <End Role="MenuItemMap" Type="rub_bbqModel.Store.MenuItemMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuItemMap">
+              <PropertyRef Name="MenuItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_DinerType">
+          <End Role="DinerType" Type="rub_bbqModel.Store.DinerType" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DinerType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="DinerTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_OrderState">
+          <End Role="OrderState" Type="rub_bbqModel.Store.OrderState" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_OrderType">
+          <End Role="OrderType" Type="rub_bbqModel.Store.OrderType" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_PaymentState">
+          <End Role="PaymentState" Type="rub_bbqModel.Store.PaymentState" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PaymentStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_User">
+          <End Role="User" Type="rub_bbqModel.Store.User" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_MenuItem">
+          <End Role="MenuItem" Type="rub_bbqModel.Store.MenuItem" Multiplicity="1" />
+          <End Role="OrderItem" Type="rub_bbqModel.Store.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Order">
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="rub_bbqModel.Store.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Order">
+          <End Role="Order" Type="rub_bbqModel.Store.Order" Multiplicity="1" />
+          <End Role="Payment" Type="rub_bbqModel.Store.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_PaymentType">
+          <End Role="PaymentType" Type="rub_bbqModel.Store.PaymentType" Multiplicity="1" />
+          <End Role="Payment" Type="rub_bbqModel.Store.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="PaymentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhoneNumber_User">
+          <End Role="User" Type="rub_bbqModel.Store.User" Multiplicity="0..1" />
+          <End Role="PhoneNumber" Type="rub_bbqModel.Store.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rub_bbqModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="rub_bbqEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="rub_bbqModel.Address" />
+          <EntitySet Name="DinerTypes" EntityType="rub_bbqModel.DinerType" />
+          <EntitySet Name="Discounts" EntityType="rub_bbqModel.Discount" />
+          <EntitySet Name="Menus" EntityType="rub_bbqModel.Menu" />
+          <EntitySet Name="MenuItems" EntityType="rub_bbqModel.MenuItem" />
+          <EntitySet Name="Orders" EntityType="rub_bbqModel.Order" />
+          <EntitySet Name="OrderItems" EntityType="rub_bbqModel.OrderItem" />
+          <EntitySet Name="OrderStates" EntityType="rub_bbqModel.OrderState" />
+          <EntitySet Name="OrderTypes" EntityType="rub_bbqModel.OrderType" />
+          <EntitySet Name="Payments" EntityType="rub_bbqModel.Payment" />
+          <EntitySet Name="PaymentStates" EntityType="rub_bbqModel.PaymentState" />
+          <EntitySet Name="PaymentTypes" EntityType="rub_bbqModel.PaymentType" />
+          <EntitySet Name="PhoneNumbers" EntityType="rub_bbqModel.PhoneNumber" />
+          <EntitySet Name="States" EntityType="rub_bbqModel.State" />
+          <EntitySet Name="Users" EntityType="rub_bbqModel.User" />
+          <AssociationSet Name="FK_Address_State" Association="rub_bbqModel.FK_Address_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_User" Association="rub_bbqModel.FK_Address_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_DinerType" Association="rub_bbqModel.FK_Order_DinerType">
+            <End Role="DinerType" EntitySet="DinerTypes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discount_Order" Association="rub_bbqModel.FK_Discount_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Discount" EntitySet="Discounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_MenuItem" Association="rub_bbqModel.FK_OrderItem_MenuItem">
+            <End Role="MenuItem" EntitySet="MenuItems" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrderState" Association="rub_bbqModel.FK_Order_OrderState">
+            <End Role="OrderState" EntitySet="OrderStates" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrderType" Association="rub_bbqModel.FK_Order_OrderType">
+            <End Role="OrderType" EntitySet="OrderTypes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_PaymentState" Association="rub_bbqModel.FK_Order_PaymentState">
+            <End Role="PaymentState" EntitySet="PaymentStates" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_User" Association="rub_bbqModel.FK_Order_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Order" Association="rub_bbqModel.FK_OrderItem_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Order" Association="rub_bbqModel.FK_Payment_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_PaymentType" Association="rub_bbqModel.FK_Payment_PaymentType">
+            <End Role="PaymentType" EntitySet="PaymentTypes" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhoneNumber_User" Association="rub_bbqModel.FK_PhoneNumber_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="MenuItemMap" Association="rub_bbqModel.MenuItemMap">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="MenuItem" EntitySet="MenuItems" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="State" Relationship="rub_bbqModel.FK_Address_State" FromRole="Address" ToRole="State" />
+          <NavigationProperty Name="User" Relationship="rub_bbqModel.FK_Address_User" FromRole="Address" ToRole="User" />
+        </EntityType>
+        <EntityType Name="DinerType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="rub_bbqModel.FK_Order_DinerType" FromRole="DinerType" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="DiscountTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="rub_bbqModel.FK_Discount_Order" FromRole="Discount" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MenuItems" Relationship="rub_bbqModel.MenuItemMap" FromRole="Menu" ToRole="MenuItem" />
+        </EntityType>
+        <EntityType Name="MenuItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrderItems" Relationship="rub_bbqModel.FK_OrderItem_MenuItem" FromRole="MenuItem" ToRole="OrderItem" />
+          <NavigationProperty Name="Menus" Relationship="rub_bbqModel.MenuItemMap" FromRole="MenuItem" ToRole="Menu" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="OrderTypeId" Type="Int32" Nullable="false" />
+          <Property Name="DinerTypeId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentStateId" Type="Int32" Nullable="false" />
+          <Property Name="OrderStateId" Type="Int32" Nullable="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DinerType" Relationship="rub_bbqModel.FK_Order_DinerType" FromRole="Order" ToRole="DinerType" />
+          <NavigationProperty Name="Discounts" Relationship="rub_bbqModel.FK_Discount_Order" FromRole="Order" ToRole="Discount" />
+          <NavigationProperty Name="OrderState" Relationship="rub_bbqModel.FK_Order_OrderState" FromRole="Order" ToRole="OrderState" />
+          <NavigationProperty Name="OrderType" Relationship="rub_bbqModel.FK_Order_OrderType" FromRole="Order" ToRole="OrderType" />
+          <NavigationProperty Name="PaymentState" Relationship="rub_bbqModel.FK_Order_PaymentState" FromRole="Order" ToRole="PaymentState" />
+          <NavigationProperty Name="User" Relationship="rub_bbqModel.FK_Order_User" FromRole="Order" ToRole="User" />
+          <NavigationProperty Name="OrderItems" Relationship="rub_bbqModel.FK_OrderItem_Order" FromRole="Order" ToRole="OrderItem" />
+          <NavigationProperty Name="Payments" Relationship="rub_bbqModel.FK_Payment_Order" FromRole="Order" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UnitTax" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Memo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MenuItem" Relationship="rub_bbqModel.FK_OrderItem_MenuItem" FromRole="OrderItem" ToRole="MenuItem" />
+          <NavigationProperty Name="Order" Relationship="rub_bbqModel.FK_OrderItem_Order" FromRole="OrderItem" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="OrderState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="rub_bbqModel.FK_Order_OrderState" FromRole="OrderState" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="OrderType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="rub_bbqModel.FK_Order_OrderType" FromRole="OrderType" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+          <Property Name="Memo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Order" Relationship="rub_bbqModel.FK_Payment_Order" FromRole="Payment" ToRole="Order" />
+          <NavigationProperty Name="PaymentType" Relationship="rub_bbqModel.FK_Payment_PaymentType" FromRole="Payment" ToRole="PaymentType" />
+        </EntityType>
+        <EntityType Name="PaymentState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="rub_bbqModel.FK_Order_PaymentState" FromRole="PaymentState" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="IsCreditCard" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Payments" Relationship="rub_bbqModel.FK_Payment_PaymentType" FromRole="PaymentType" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="14" Unicode="true" FixedLength="true" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="rub_bbqModel.FK_PhoneNumber_User" FromRole="PhoneNumber" ToRole="User" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Addresses" Relationship="rub_bbqModel.FK_Address_State" FromRole="State" ToRole="Address" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Birthday" Type="DateTime" />
+          <NavigationProperty Name="Addresses" Relationship="rub_bbqModel.FK_Address_User" FromRole="User" ToRole="Address" />
+          <NavigationProperty Name="Orders" Relationship="rub_bbqModel.FK_Order_User" FromRole="User" ToRole="Order" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="rub_bbqModel.FK_PhoneNumber_User" FromRole="User" ToRole="PhoneNumber" />
+        </EntityType>
+        <Association Name="FK_Address_State">
+          <End Role="State" Type="rub_bbqModel.State" Multiplicity="1" />
+          <End Role="Address" Type="rub_bbqModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_User">
+          <End Role="User" Type="rub_bbqModel.User" Multiplicity="0..1" />
+          <End Role="Address" Type="rub_bbqModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_DinerType">
+          <End Role="DinerType" Type="rub_bbqModel.DinerType" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DinerType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="DinerTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discount_Order">
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="1" />
+          <End Role="Discount" Type="rub_bbqModel.Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Discount">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_MenuItem">
+          <End Role="MenuItem" Type="rub_bbqModel.MenuItem" Multiplicity="1" />
+          <End Role="OrderItem" Type="rub_bbqModel.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_OrderState">
+          <End Role="OrderState" Type="rub_bbqModel.OrderState" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_OrderType">
+          <End Role="OrderType" Type="rub_bbqModel.OrderType" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_PaymentState">
+          <End Role="PaymentState" Type="rub_bbqModel.PaymentState" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PaymentStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_User">
+          <End Role="User" Type="rub_bbqModel.User" Multiplicity="1" />
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Order">
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="rub_bbqModel.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Order">
+          <End Role="Order" Type="rub_bbqModel.Order" Multiplicity="1" />
+          <End Role="Payment" Type="rub_bbqModel.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_PaymentType">
+          <End Role="PaymentType" Type="rub_bbqModel.PaymentType" Multiplicity="1" />
+          <End Role="Payment" Type="rub_bbqModel.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="PaymentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhoneNumber_User">
+          <End Role="User" Type="rub_bbqModel.User" Multiplicity="0..1" />
+          <End Role="PhoneNumber" Type="rub_bbqModel.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MenuItemMap">
+          <End Role="Menu" Type="rub_bbqModel.Menu" Multiplicity="*" />
+          <End Role="MenuItem" Type="rub_bbqModel.MenuItem" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rub_bbqModelStoreContainer" CdmEntityContainer="rub_bbqEntities">
+          <EntitySetMapping Name="Addresses"><EntityTypeMapping TypeName="rub_bbqModel.Address"><MappingFragment StoreEntitySet="Address">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="Address1" ColumnName="Address1" />
+            <ScalarProperty Name="Address2" ColumnName="Address2" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="StateId" ColumnName="StateId" />
+            <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+            <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DinerTypes"><EntityTypeMapping TypeName="rub_bbqModel.DinerType"><MappingFragment StoreEntitySet="DinerType">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Discounts"><EntityTypeMapping TypeName="rub_bbqModel.Discount"><MappingFragment StoreEntitySet="Discount">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="DiscountTypeId" ColumnName="DiscountTypeId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Menus"><EntityTypeMapping TypeName="rub_bbqModel.Menu"><MappingFragment StoreEntitySet="Menu">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MenuItems"><EntityTypeMapping TypeName="rub_bbqModel.MenuItem"><MappingFragment StoreEntitySet="MenuItem">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Orders"><EntityTypeMapping TypeName="rub_bbqModel.Order"><MappingFragment StoreEntitySet="Order">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Number" ColumnName="Number" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="OrderTypeId" ColumnName="OrderTypeId" />
+            <ScalarProperty Name="DinerTypeId" ColumnName="DinerTypeId" />
+            <ScalarProperty Name="PaymentStateId" ColumnName="PaymentStateId" />
+            <ScalarProperty Name="OrderStateId" ColumnName="OrderStateId" />
+            <ScalarProperty Name="Memo" ColumnName="Memo" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderItems"><EntityTypeMapping TypeName="rub_bbqModel.OrderItem"><MappingFragment StoreEntitySet="OrderItem">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+            <ScalarProperty Name="UnitTax" ColumnName="UnitTax" />
+            <ScalarProperty Name="Memo" ColumnName="Memo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderStates"><EntityTypeMapping TypeName="rub_bbqModel.OrderState"><MappingFragment StoreEntitySet="OrderState">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderTypes"><EntityTypeMapping TypeName="rub_bbqModel.OrderType"><MappingFragment StoreEntitySet="OrderType">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Payments"><EntityTypeMapping TypeName="rub_bbqModel.Payment"><MappingFragment StoreEntitySet="Payment">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="Memo" ColumnName="Memo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PaymentStates"><EntityTypeMapping TypeName="rub_bbqModel.PaymentState"><MappingFragment StoreEntitySet="PaymentState">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PaymentTypes"><EntityTypeMapping TypeName="rub_bbqModel.PaymentType"><MappingFragment StoreEntitySet="PaymentType">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="IsCreditCard" ColumnName="IsCreditCard" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PhoneNumbers"><EntityTypeMapping TypeName="rub_bbqModel.PhoneNumber"><MappingFragment StoreEntitySet="PhoneNumber">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Number" ColumnName="Number" />
+            <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="States"><EntityTypeMapping TypeName="rub_bbqModel.State"><MappingFragment StoreEntitySet="State">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="rub_bbqModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Username" ColumnName="Username" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="MenuItemMap" TypeName="rub_bbqModel.MenuItemMap" StoreEntitySet="MenuItemMap">
+            <EndProperty Name="Menu">
+              <ScalarProperty Name="Id" ColumnName="MenuID" />
+            </EndProperty>
+            <EndProperty Name="MenuItem">
+              <ScalarProperty Name="Id" ColumnName="MenuItemID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="rub_bbqModel.Address" Width="1.5" PointX="3" PointY="7.875" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.DinerType" Width="1.5" PointX="3.75" PointY="4.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.Discount" Width="1.5" PointX="8.25" PointY="8.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.Menu" Width="1.5" PointX="6.75" PointY="13.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.MenuItem" Width="1.5" PointX="9" PointY="13" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.Order" Width="1.5" PointX="6" PointY="7.125" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.OrderItem" Width="1.5" PointX="11.25" PointY="7.875" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.OrderState" Width="1.5" PointX="3.75" PointY="12.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.OrderType" Width="1.5" PointX="3.75" PointY="1.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.Payment" Width="1.5" PointX="8.25" PointY="5.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.PaymentState" Width="1.5" PointX="3.75" PointY="20.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.PaymentType" Width="1.5" PointX="6" PointY="4.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.PhoneNumber" Width="1.5" PointX="3" PointY="17" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.State" Width="1.5" PointX="0.75" PointY="4.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="rub_bbqModel.User" Width="1.5" PointX="0.75" PointY="7.875" Height="2.7494921875000031" IsExpanded="true" />
+        <AssociationConnector Association="rub_bbqModel.FK_Address_State" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.46875" />
+          <ConnectorPoint PointX="3.34375" PointY="4.46875" />
+          <ConnectorPoint PointX="3.34375" PointY="7.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Address_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.2497460937500016" />
+          <ConnectorPoint PointX="3" PointY="9.2497460937500016" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Order_DinerType" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.90625" PointY="6.4129850260416674" />
+          <ConnectorPoint PointX="4.90625" PointY="7.46875" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="7.4687499999999991" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="7.46875" />
+          <ConnectorPoint PointX="6" PointY="7.46875" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Discount_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="9.2401432291666659" />
+          <ConnectorPoint PointX="8.25" PointY="9.2401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_OrderItem_MenuItem" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.15625" PointY="13" />
+          <ConnectorPoint PointX="10.15625" PointY="10.5547900390625" />
+          <ConnectorPoint PointX="11.25" PointY="10.5547900390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Order_OrderState" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.078125" PointY="12.125" />
+          <ConnectorPoint PointX="5.078125" PointY="11.1460986328125" />
+          <ConnectorPoint PointX="6" PointY="11.1460986328125" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Order_OrderType" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="3.4129850260416674" />
+          <ConnectorPoint PointX="5.625" PointY="3.7879850260416674" />
+          <ConnectorPoint PointX="5.625" PointY="9.30742431640625" />
+          <ConnectorPoint PointX="6" PointY="9.30742431640625" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Order_PaymentState" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="21.143992513020834" />
+          <ConnectorPoint PointX="6.34375" PointY="21.143992513020834" />
+          <ConnectorPoint PointX="6.34375" PointY="11.412903645833332" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Order_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="10.624492187500003" />
+          <ConnectorPoint PointX="1.5" PointY="10.981443626302083" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="10.981443626302083" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="10.981443626302083" />
+          <ConnectorPoint PointX="6" PointY="10.981443626302083" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_OrderItem_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="8.03125" />
+          <ConnectorPoint PointX="11.25" PointY="8.03125" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Payment_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="7.3074446614583337" />
+          <ConnectorPoint PointX="8.25" PointY="7.3074446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_Payment_PaymentType" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="5.6776432291666659" />
+          <ConnectorPoint PointX="8.25" PointY="5.6776432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.FK_PhoneNumber_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="10.624492187500003" />
+          <ConnectorPoint PointX="1.9062525" PointY="18.0862939453125" />
+          <ConnectorPoint PointX="3" PointY="18.0862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="rub_bbqModel.MenuItemMap" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.25" PointY="14.268992513020834" />
+          <ConnectorPoint PointX="9" PointY="14.268992513020834" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
