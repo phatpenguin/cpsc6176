@@ -1,15 +1,15 @@
 ﻿body 
 {
     background-color: Black;
+    font-family:Microsoft Sans Serif;
+    font-size:medium;
+    color: White;
+    font-weight:bold;
     width:66%;
 }
 
 .about-us-main
 {
-    color: White;
-    font-family:Microsoft Sans Serif;
-    font-size:medium;
-    font-weight:bold;
     margin: 5px;
 }
 
@@ -18,11 +18,8 @@
     position:fixed;
     width:66%;
     bottom:0;
-    color: White;
     font-size:large;
     text-align:center;
-    font-weight:bold;
-    font-family:Microsoft Sans Serif;
 }
 
 .about-us-redtext
