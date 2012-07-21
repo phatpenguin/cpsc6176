@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Net.Mail;
 
 public partial class Contact : System.Web.UI.Page
@@ -40,7 +35,7 @@ public partial class Contact : System.Web.UI.Page
 
     public MailMessage Mailbodplain(string fromad, string toad, string body, string header, string subjectcontent)
     {
-        System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+        MailMessage mail = new MailMessage();
         try
         {
             string from = fromad;
