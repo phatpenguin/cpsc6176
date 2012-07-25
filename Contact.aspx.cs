@@ -57,7 +57,8 @@ public partial class Contact : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        SendUserMail(FromTextBox.Text, "cpsc6176@googlegroups.com" , MessageTextBox.Text, "Customer", "Contact from customer");
+        SendUserMail(FromEmailTextBox.Text, "cpsc6176@googlegroups.com" , MessageTextBox.Text, 
+            FromTextBox.Text, "Contact from customer");
     }
 }
 
