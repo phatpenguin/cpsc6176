@@ -20,23 +20,20 @@ td.align-center
     text-align:center;
 }
 
-span.left
-{
-    float:left;
-}
-
 span.right
 {
     float:right;
 }
 
+
 div.left
 {
-    float:left;
+    width:44%;
 }
 
 div.right
 {
+    width:22%;
     float:right;
 }
 
