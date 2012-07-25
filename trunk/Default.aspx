@@ -8,23 +8,31 @@
 <div> 
     
     <%--Top--%>
-    <div>
+    <div class="left">
     
+        <span>
+        testing layout top (top-left)
+        </span>
+
+        <span class="right">
+        testing layout top (top-right)
+        </span>
+
     </div>
 
     <%--Right--%>
-    <div>
-    
+    <div class="right">
+    testing layout right
     </div>
 
     <%--Left top-half--%>
-    <div>
-    
+    <div class="left">
+    testing layout left top
     </div>
 
     <%--Left bottom-half--%>
-    <div>
-    
+    <div class="left, centered-text">
+    testing layout left bottom centered
     </div>
 
 </div>
