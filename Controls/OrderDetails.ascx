@@ -3,29 +3,8 @@
 
 
     <asp:ListView ID="ListView1" runat="server"  DataSourceID="ObjectDataSource1"
-        onitemdeleting="ListView1_ItemDeleting">
-       
-        <%--<EditItemTemplate>
-            <tr style="background-color: #FFCC66;color: #000080;">
-                <td>
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" 
-                        Text="Update" />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
-                        Text="Cancel" />
-                </td>
-                <td>
-                    <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
-                </td>
-                <td>
-                    <asp:TextBox ID="QuantityTextBox" runat="server" 
-                        Text='<%# Bind("Quantity") %>' />
-                </td>
-                <td>
-                    <asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' />
-                </td>
-
-            </tr>
-        </EditItemTemplate>--%>
+        onitemdeleting="ListView1_ItemDeleting" 
+    onitemdeleted="ListView1_ItemDeleted">
         <EmptyDataTemplate>
             <table id="Table1" runat="server" 
                 style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
@@ -38,8 +17,8 @@
         <ItemTemplate>
             <tr style="background-color: #FFFBD6;color: #333333;">
                 <td>
-                    <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
-                         style="background-image:url(images/delete.png)" ToolTip="Delete" />
+                    <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="X" style="background-color:white; color:Red" 
+                         ToolTip="Delete" />
                 </td>
                 <td>
                     <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
@@ -126,17 +105,13 @@
 </table>
 
 
-<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-       DeleteMethod="deleteItem" SelectMethod="getItems"
-        TypeName="classClsItemsManager">
-       <DeleteParameters>
-            <asp:Parameter Name="index" Type="Int32" />
-        </DeleteParameters>
+<asp:ObjectDataSource ID="ObjectDataSource1" runat="server"
+        TypeName="classClsItemsManager" DeleteMethod="deleteItem" 
+    SelectMethod="getItems">
     </asp:ObjectDataSource>
  
  
-
-
+ 
 
 
 
