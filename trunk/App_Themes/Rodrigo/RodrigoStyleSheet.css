@@ -8,6 +8,17 @@
     width:66%;
 }
 
+table
+{
+    width: 66%;
+    padding: 5px;
+    text-align: left;
+}
+
+td.align-center
+{
+    text-align:center;
+}
 .about-us-main
 {
     margin: 5px;
