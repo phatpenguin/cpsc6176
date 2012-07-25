@@ -19,6 +19,32 @@ td.align-center
 {
     text-align:center;
 }
+
+span.left
+{
+    float:left;
+}
+
+span.right
+{
+    float:right;
+}
+
+div.left
+{
+    float:left;
+}
+
+div.right
+{
+    float:right;
+}
+
+div.centered-text
+{
+    text-align:center;
+}
+
 .about-us-main
 {
     margin: 5px;
