@@ -11,21 +11,14 @@ public partial class OrderDetails : System.Web.UI.UserControl
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-        
-        //classClsItemsManager.AddItem(item[0], Int32.Parse(item[1]));
-        //ListView1.DataSource = classClsItemsManager.getItems();
-        //ListView1.DataBind();
-        SubTotalLabel.Text = classClsItemsManager.getSubTotal();
-        TaxLabel.Text = classClsItemsManager.getTax();
-        TotalLabel.Text = classClsItemsManager.getTotal();
+
+        // SubTotalLabel.Text = classClsItemsManager.getSubTotal();
+
     }
 
-    public void AddItem(string item, double price,int qty)
+    public void AddItem(string item, double price, int qty)
     {
         classClsItemsManager.AddItem(item, price, qty);
-      //  ListView1.DataSource = classClsItemsManager.getItems();
-        
         ListView1.DataBind();
         TaxLabel.Text = classClsItemsManager.getTax();
         SubTotalLabel.Text = classClsItemsManager.getSubTotal();
@@ -43,7 +36,15 @@ public partial class OrderDetails : System.Web.UI.UserControl
     protected void ListView1_ItemDeleting(object sender, ListViewDeleteEventArgs e)
     {
 
-        //ListView1.Items.RemoveAt(e.ItemIndex);
-        classClsItemsManager.deleteItem(e.ItemIndex);
+        ListView1.Items.RemoveAt(e.ItemIndex);
+        classClsItemsManager.ItemToDelete = e.ItemIndex;
+
+    }
+
+    protected void ListView1_ItemDeleted(object sender, ListViewDeletedEventArgs e)
+    {
+        SubTotalLabel.Text = classClsItemsManager.getSubTotal();
+        TaxLabel.Text = classClsItemsManager.getTax();
+        TotalLabel.Text = classClsItemsManager.getTotal();
     }
 }

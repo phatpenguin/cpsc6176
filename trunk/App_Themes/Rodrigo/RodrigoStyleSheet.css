@@ -1,9 +1,9 @@
 ﻿body 
 {
-    background-color: Black;
+    background-color: white;
     font-family:Microsoft Sans Serif;
     font-size:medium;
-    color: White;
+    color: Black;
     font-weight:bold;
     width:66%;
 }
@@ -42,3 +42,24 @@ img.family-pic
     height: 250px; 
     width: 350px;
 }
+
+.UserControlTableTotal
+{
+    
+    border-collapse: collapse;
+    border-color: #999999;
+    border-style: none;
+    border-width: 1px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.UserControlTableTotal tr
+{
+  
+   color: #333333;
+   border:1;
+   border-width:thick;
+}
+
+
