@@ -5,26 +5,11 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
 
 <%--MainContent--%>
-<div> 
+<div class="main"> 
     
-    <%--Top--%>
-    <div class="left">
-    
-        <span>
-            <asp:Image ID="HomeWelcomeImage" runat="server" 
-            width="180px" Height="40px"
-            ImageUrl="~/Images/HomePage/welcome.GIF" />
-        </span>
-
-        <span class="right">
-        *2012 Ribfest Chicago<br />
-        "BEST RIBS" Winner*
-        </span>
-
-    </div>
-
+    <div class="right">
     <%--Right--%>
-    <div class="right, centered-text">
+    <div class="centered-text">
         <asp:Image ID="RibsImage" SkinID="largePhotoWithPadding" runat="server" 
             ImageUrl="~/Images/HomePage/Ribs.jpg" Width="150px" Height="200px" />
             <br />
@@ -49,14 +34,34 @@
         Join Us On Facebook Today!
 
         <asp:HyperLink ID="FacebookHyperlink" runat="server"
-        ImageUrl="~/Images/HomePage/facebook.jpg" Height="35px" Width="35px"
+        ImageUrl="~/Images/HomePage/facebook.png" Height="35px" Width="35px"
         NavigateUrl="http://www.facebook.com/pages/Chicago-IL/RUB-BBQ-Co/110481898970213?ref=ts">
         </asp:HyperLink>    
         
     </div>
 
-    <%--Left top-half--%>
+    </div>
+
+
     <div class="left">
+    <%--Top--%>
+    <div>
+    
+        <span>
+            <asp:Image ID="HomeWelcomeImage" runat="server" 
+            width="180px" Height="40px"
+            ImageUrl="~/Images/HomePage/welcome.GIF" />
+        </span>
+
+        <span class="right">
+        *2012 Ribfest Chicago<br />
+        "BEST RIBS" Winner*
+        </span>
+
+    </div>
+
+     <%--Left top-half--%>
+    <div>
     <p>
     At
       <asp:Image ID="RubBBQCompanyImage" runat="server" 
@@ -75,7 +80,7 @@
     </div>
 
     <%--Left bottom-half--%>
-    <div class="left, centered-text">
+    <div class="centered-text">
     Our motto is simple: 
     <br /><br />
 
@@ -92,6 +97,8 @@
         <asp:HyperLink ID="abcNorthLink" runat="server" NavigateUrl="http://abclocal.go.com/wls/video?id=7731040">
         Watch us on ABC's 190 North!
         </asp:HyperLink>
+    </div>
+
     </div>
 
 </div>
