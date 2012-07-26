@@ -17,7 +17,7 @@
         <table style="width: 100%;">
             <tr>
                 <td>
-                    <asp:Image ID="LogoImage" runat="server" Height="111px" />
+                    <asp:Image ID="LogoImage" runat="server" Height="111px" Width="111px" />
                 </td>
                 <td>
                     <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" 

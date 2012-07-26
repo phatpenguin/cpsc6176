@@ -25,15 +25,18 @@ span.right
     float:right;
 }
 
-
+div.main
+{
+    width: 700px;
+}
 div.left
 {
-    width:44%;
+    width:500px;
 }
 
 div.right
 {
-    width:22%;
+    width:170px;
     float:right;
 }
 
