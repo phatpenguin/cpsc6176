@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About Us" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" 
+﻿<%@ Page Title="Rub BBQ About Us" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" 
 CodeFile="About.aspx.cs" Inherits="About" EnableTheming="true" Theme="Rodrigo" UICulture="auto:en-US" Culture="auto:en-US" meta:resourcekey="PageResource1"%>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">

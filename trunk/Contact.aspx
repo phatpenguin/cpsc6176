@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contact Us" Language="C#" MasterPageFile="~/MainMasterPage.master" 
+﻿<%@ Page Title="Rub BBQ Contact Us" Language="C#" MasterPageFile="~/MainMasterPage.master" 
 AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact" 
 EnableTheming="true" Theme="Rodrigo" %>
 
