@@ -33,12 +33,23 @@
                     </asp:Menu>
                 </td>
                 <td>
-                    <asp:LinkButton ID="LoginLinkButton" runat="server" 
+
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">LogIn</asp:HyperLink> 
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                            <br />
+                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}!" />
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                   <%-- <asp:LinkButton ID="LoginLinkButton" runat="server" 
                         onclick="LoginLinkButton_Click">Log In</asp:LinkButton>
                     <asp:Panel ID="WelcomeMessagePanel" runat="server" Visible="False">
                         Welcome,
                         <asp:Label ID="UserNameLabel" runat="server"></asp:Label>
-                    </asp:Panel>
+                    </asp:Panel>--%>
                     <br />
                 </td>
             </tr>
