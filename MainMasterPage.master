@@ -10,6 +10,10 @@
 </head>
 <body>
     <form id="MasterPageform" runat="server">
+    <asp:ScriptManager ID="ScriptManagerMasterPage" runat="server">
+    </asp:ScriptManager>
+   
+                       
         <table style="width: 100%;">
             <tr>
                 <td>
@@ -41,8 +45,21 @@
                         <LoggedInTemplate>
                             <asp:LoginStatus ID="LoginStatus1" runat="server" />
                             <br />
-                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}!" />
-                        </LoggedInTemplate>
+                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}!" /><br />
+                            <asp:UpdatePanel ID="UpdatePanelLoginTime" runat="server">
+                                <ContentTemplate>
+                                    Time logged in:  
+                                    <asp:Label ID="LoginTimeLabel" runat="server"></asp:Label>
+                                    <asp:Timer ID="LoginTimer" runat="server" 
+                                    OnTick="LoginTimer_Tick" Interval="1000">
+                                    </asp:Timer>
+
+                                    <asp:Label ID="BeginTime" runat="server" Visible="false"></asp:Label>
+                       
+                                </ContentTemplate>
+                            
+                            </asp:UpdatePanel>
+                             </LoggedInTemplate>
                     </asp:LoginView>
                    <%-- <asp:LinkButton ID="LoginLinkButton" runat="server" 
                         onclick="LoginLinkButton_Click">Log In</asp:LinkButton>
