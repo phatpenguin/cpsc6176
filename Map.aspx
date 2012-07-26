@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Location Map" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Map.aspx.cs" Inherits="Map" %>
+﻿<%@ Page Title="Rub BBQ Map Page" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Map.aspx.cs" Inherits="Map" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">
 </asp:Content>
