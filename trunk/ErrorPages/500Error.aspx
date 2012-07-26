@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="500Error.aspx.cs" Inherits="ErrorPages_500Error" %>
+﻿<%@ Page Title="Rub BBQ 500 error" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="500Error.aspx.cs" Inherits="ErrorPages_500Error" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">
 </asp:Content>
