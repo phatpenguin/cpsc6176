@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs" Inherits="MainMasterPage" %>
 
+<%@ Register src="Controls/OrderDetails.ascx" tagname="OrderDetails" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,7 +19,8 @@
         <table style="width: 100%;">
             <tr>
                 <td>
-                    <asp:Image ID="LogoImage" runat="server" Height="111px" Width="111px" />
+                    <asp:Image ID="LogoImage" runat="server" Height="111px" 
+                        ImageUrl="~/Images/bbqrubcompanylogo.jpg" />
                 </td>
                 <td>
                     <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" 
@@ -77,13 +80,21 @@
                     </asp:SiteMapPath>
                 </td>
             </tr>
-        </table>
-    <div>
+
+            <tr>
+                <td colspan="2">
         <asp:ContentPlaceHolder id="BodyContentPlaceHolder" runat="server">
         
             
         
         </asp:ContentPlaceHolder>
+                </td>
+                <td>
+                    <uc1:OrderDetails ID="OrderDetails1" runat="server" />
+                </td>
+            </tr>
+        </table>
+    <div>
         <br />
         <asp:Literal ID="Literal" runat="server">Copyright 2012 Rub BBQ Company</asp:Literal>
     </div>
