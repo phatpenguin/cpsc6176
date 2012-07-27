@@ -1,0 +1,102 @@
+﻿body 
+{
+    background-color: white;
+    font-family:Microsoft Sans Serif;
+    font-size:medium;
+    color: Black;
+    font-weight:bold;
+    width:66%;
+}
+
+table
+{
+    width: 66%;
+    padding: 5px;
+    text-align: left;
+}
+
+td.align-center
+{
+    text-align:center;
+}
+
+span.right
+{
+    float:right;
+}
+
+div.main
+{
+    width: 700px;
+}
+div.left
+{
+    width:500px;
+}
+
+div.right
+{
+    width:170px;
+    float:right;
+}
+
+div.centered-text
+{
+    text-align:center;
+}
+
+.about-us-main
+{
+    margin: 5px;
+}
+
+.about-us-footer
+{
+    position:fixed;
+    width:66%;
+    bottom:0;
+    font-size:large;
+    text-align:center;
+}
+
+.about-us-redtext
+{
+    color:Red;
+}
+
+
+
+img.about-us-text
+{
+    height:45px;
+    width:190px;
+}
+
+img.family-pic
+{
+    float: right;
+    margin: 5px 15px;
+    height: 250px; 
+    width: 350px;
+}
+
+.UserControlTableTotal
+{
+    
+    border-collapse: collapse;
+    border-color: #999999;
+    border-style: none;
+    border-width: 1px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.UserControlTableTotal tr
+{
+  
+   color: #333333;
+   border:1;
+   border-width:thick;
+}
+
+
