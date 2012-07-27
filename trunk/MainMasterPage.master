@@ -45,7 +45,7 @@
                         <LoggedInTemplate>
                             <asp:LoginStatus ID="LoginStatus1" runat="server" />
                             <br />
-                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}!" /><br />
+                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}" /><br />
                             <asp:UpdatePanel ID="UpdatePanelLoginTime" runat="server">
                                 <ContentTemplate>
                                     Time logged in:  

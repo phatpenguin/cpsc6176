@@ -54,5 +54,7 @@ Our house-made sauce is served on the side, but most of our customers agree that
 OUR MOTTO: <span class="about-us-redtext">RUB IT, SMOKE IT, EAT IT!</span>
 </div>
 
+</span>
+
 </asp:Content>
 
