@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Rub BBQ Contact Us" Language="C#" MasterPageFile="~/MainMasterPage.master" 
 AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact" 
-EnableTheming="true" Theme="Rodrigo" %>
+EnableTheming="true"  %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">
 </asp:Content>
