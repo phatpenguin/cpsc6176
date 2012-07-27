@@ -17,19 +17,10 @@
         TargetControlID="LoginPanel">
         </asp:RoundedCornersExtender>
 
-        <asp:Panel ID="LogInPanel" SkinID="LogInPanel" runat="server">
+        <asp:Panel ID="LogInPanel" SkinID="LogInPanel" runat="server" BackColor="Orange" Width="250px" HorizontalAlign="Center">
         <i>Name:Admin Password=password!</i>
         <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/Default.aspx" 
-                BackColor="#FFFBD6" BorderColor="#FFDFAD" BorderPadding="4" BorderStyle="Solid" 
-                BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" 
-                TextLayout="TextOnTop" CreateUserText="Create an Account" 
-                CreateUserUrl="~/CreateAccount.aspx">
-            <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
-            <LoginButtonStyle BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" 
-                BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" />
-            <TextBoxStyle Font-Size="0.8em" />
-            <TitleTextStyle BackColor="#990000" Font-Bold="True" Font-Size="0.9em" 
-                ForeColor="White" />
+                CreateUserText="Create an Account" CreateUserUrl="~/CreateAccount.aspx">
         </asp:Login>
     </asp:Panel>
     
