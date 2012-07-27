@@ -9,20 +9,20 @@
     <title>Rub BBQ Login</title>
 </head>
 <body>
+<i>Name:Admin Password=password!</i>
     <form id="form1" runat="server">
     <div>
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
         </asp:ToolkitScriptManager>
         <asp:RoundedCornersExtender ID="RoundedCornersExtenderForLogin" runat="server"
-        TargetControlID="LoginPanel">
+        TargetControlID="LogInPanel">
         </asp:RoundedCornersExtender>
 
-        <asp:Panel ID="LogInPanel" SkinID="LogInPanel" runat="server" BackColor="Orange" Width="250px" HorizontalAlign="Center">
-        <i>Name:Admin Password=password!</i>
+        <asp:Panel ID="LogInPanel" SkinID="LogInPanel" runat="server">
         <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/Default.aspx" 
                 CreateUserText="Create an Account" CreateUserUrl="~/CreateAccount.aspx">
         </asp:Login>
-    </asp:Panel>
+        </asp:Panel>
     
     </div>
     </form>
