@@ -14,7 +14,6 @@
     <h1>Something seems to be wrong with the database again!</h1><br />
     Why don't you try logging in!<br />
     Or you can click on the menu above and visit one of our other pages!
-
 </div>
 
 </asp:Content>

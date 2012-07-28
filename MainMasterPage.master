@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>Rub BBQ Master Page</title>
     <asp:ContentPlaceHolder id="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
@@ -40,30 +40,52 @@
                     </asp:Menu>
                 </td>
                 <td>
-
-                    <asp:LoginView ID="LoginView1" runat="server">
-                        <AnonymousTemplate>
-                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">LogIn</asp:HyperLink> 
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <asp:LoginStatus ID="LoginStatus1" runat="server" />
-                            <br />
-                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}" /><br />
-                            <asp:UpdatePanel ID="UpdatePanelLoginTime" runat="server">
-                                <ContentTemplate>
-                                    Time logged in:  
-                                    <asp:Label ID="LoginTimeLabel" runat="server"></asp:Label>
-                                    <asp:Timer ID="LoginTimer" runat="server" 
-                                    OnTick="LoginTimer_Tick" Interval="1000">
-                                    </asp:Timer>
-
-                                    <asp:Label ID="BeginTime" runat="server" Visible="false"></asp:Label>
-                       
-                                </ContentTemplate>
-                            
-                            </asp:UpdatePanel>
-                             </LoggedInTemplate>
-                    </asp:LoginView>
+                <asp:Image ID="Image1" runat="server" Width="80px" Height="80px" BorderStyle="Solid" />
+                <asp:LoginView ID="LoginView1" runat="server" >
+                    <AnonymousTemplate>
+                     <br /><asp:Literal ID="Literal1" runat="server">Who is your favourite Cubs player? 
+                     Log in and select you favorite player to see his picture each time to log back in here:</asp:Literal>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">LogIn</asp:HyperLink>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                        <br />
+                        <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome {0}" />
+                        <br />
+                        <asp:Panel ID="Panel1" runat="server">
+                            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"
+                                AutoPostBack="True">
+                                <asp:ListItem>Pick you favourite Batter</asp:ListItem>
+                                <asp:ListItem>Geovany Soto</asp:ListItem>
+                                <asp:ListItem>Steve Clevenger</asp:ListItem>
+                                <asp:ListItem>Anthony Rizzo</asp:ListItem>
+                                <asp:ListItem>Jeff Baker</asp:ListItem>
+                                <asp:ListItem>Darwin Barney</asp:ListItem>
+                                <asp:ListItem>Starlin Castro</asp:ListItem>
+                                <asp:ListItem>Ian Stewart</asp:ListItem>
+                                <asp:ListItem>Luis Valbuena</asp:ListItem>
+                                <asp:ListItem>Alfonso Soriano</asp:ListItem>
+                                <asp:ListItem>David DeJesus</asp:ListItem>
+                                <asp:ListItem>Reed Johnson</asp:ListItem>
+                                <asp:ListItem>Tony Campana</asp:ListItem>
+                                <asp:ListItem>Joe Mather</asp:ListItem>
+                                <asp:ListItem>Bryan LaHair</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:Button ID="Button1" runat="server" Text="Save" onclick="Button1_Click" />
+                        </asp:Panel>
+                        <br />
+                        <asp:UpdatePanel ID="UpdatePanelLoginTime" runat="server">
+                            <ContentTemplate>
+                                Time logged in:
+                                <asp:Label ID="LoginTimeLabel" runat="server"></asp:Label>
+                                <asp:Timer ID="LoginTimer" runat="server" OnTick="LoginTimer_Tick" Interval="1000">
+                                </asp:Timer>
+                                <asp:Label ID="BeginTime" runat="server" Visible="false"></asp:Label>
+                                <br />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </LoggedInTemplate>
+                </asp:LoginView>
                    <%-- <asp:LinkButton ID="LoginLinkButton" runat="server" 
                         onclick="LoginLinkButton_Click">Log In</asp:LinkButton>
                     <asp:Panel ID="WelcomeMessagePanel" runat="server" Visible="False">

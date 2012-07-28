@@ -5,7 +5,8 @@ using WcfServiceReference;
 
 public partial class Menu : System.Web.UI.Page
 {
-    private rub_bbqEntities entities = new rub_bbqEntities(new Uri("http://localhost:1045/project/WcfDataService.svc"));
+    //TODO: Please make sure to change the service port to your local host port ***************************************
+    private rub_bbqEntities entities = new rub_bbqEntities(new Uri("http://localhost:11637/RubBBQWebsite/WcfDataService.svc/"));
 
     protected void Page_Load(object sender, EventArgs e)
     {

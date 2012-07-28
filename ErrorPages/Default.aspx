@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Rub BBQ default error" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="ErrorPages_Default" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
@@ -15,8 +17,7 @@
     but I assure you we have our best guys on it!</h1><br />
     Why don't you try logging in!<br />
     Or you can click on the menu above and visit one of our other pages!
-
-</div>
+    </div>
 
 </asp:Content>
 
