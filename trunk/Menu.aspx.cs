@@ -24,4 +24,13 @@ public partial class Menu : System.Web.UI.Page
         MenuItemGridView.DataSource = null;
         MenuItemGridView.DataSourceID = "MenuItemSqlDataSource";
     }
+    protected void MenuItemGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "AddItem")
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            MenuItem menuItem = (MenuItem) MenuItemGridView.Rows[index].DataItem;
+            Master.AddItem(menuItem);
+        }
+    }
 }

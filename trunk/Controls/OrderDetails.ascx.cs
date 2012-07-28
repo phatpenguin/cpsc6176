@@ -16,7 +16,7 @@ public partial class OrderDetails : System.Web.UI.UserControl
 
     }
 
-    public void AddItem(string item, double price, int qty)
+    public void AddItem(string item, decimal price, int qty)
     {
         classClsItemsManager.AddItem(item, price, qty);
         ListView1.DataBind();
