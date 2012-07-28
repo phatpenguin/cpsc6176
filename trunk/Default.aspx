@@ -4,16 +4,17 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
 
-<%--MainContent--%>
+    <%--MainContent--%>
 <div class="main"> 
-    
+ 
     <div class="right">
     <%--Right--%>
     <div class="centered-text">
+        
         <asp:Image ID="RibsImage" SkinID="largePhotoWithPadding" runat="server" 
             ImageUrl="~/Images/HomePage/Ribs.jpg" Width="150px" Height="200px" />
             <br />
-
+        
         <asp:Image ID="OrderNowImage" SkinID="largePhotoWithPadding" runat="server" 
             ImageUrl="~/Images/HomePage/ordernow.png" Width="160px" Height="30px" />
             <br />
@@ -37,7 +38,6 @@
         ImageUrl="~/Images/HomePage/facebook.png" Height="35px" Width="35px"
         NavigateUrl="http://www.facebook.com/pages/Chicago-IL/RUB-BBQ-Co/110481898970213?ref=ts">
         </asp:HyperLink>    
-        
     </div>
 
     </div>
@@ -46,7 +46,7 @@
     <div class="left">
     <%--Top--%>
     <div>
-    
+      
         <span>
             <asp:Image ID="HomeWelcomeImage" runat="server" 
             width="180px" Height="40px"

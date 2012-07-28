@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using WcfServiceReference;
 
 public partial class MainMasterPage : System.Web.UI.MasterPage
 {
