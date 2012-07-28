@@ -49,7 +49,7 @@ public partial class MainMasterPage : System.Web.UI.MasterPage
     }
 
 
-    public void AddItem(MenuItem menuItem)
+    public void AddItem(WcfServiceReference.MenuItem menuItem)
     {
         OrderDetails1.AddItem(menuItem.Name, menuItem.Price, 1);
     }
