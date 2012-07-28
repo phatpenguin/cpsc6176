@@ -12,6 +12,13 @@ public partial class MainMasterPage : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!Page.IsPostBack)
+        {
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                Image1.ImageUrl = Profile.URL;
+            }
+        }
     }
     protected void LoginLinkButton_Click(object sender, EventArgs e)
     {
@@ -30,8 +37,21 @@ public partial class MainMasterPage : System.Web.UI.MasterPage
         
     }
 
-    public void AddItem(WcfServiceReference.MenuItem menuItem)
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Image1.ImageUrl = @"~\images\MyPlayers\" + (sender as DropDownList).SelectedValue + ".jpg";
+        Image1.AlternateText = (sender as DropDownList).SelectedValue;
+    }
+   
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Profile.URL = Image1.ImageUrl;
+    }
+
+
+    public void AddItem(MenuItem menuItem)
     {
         OrderDetails1.AddItem(menuItem.Name, menuItem.Price, 1);
     }
+
 }
