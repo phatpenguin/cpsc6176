@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Rub BBQ Order Menu" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Menu.aspx.cs" Inherits="Menu" %>
+<%@ MasterType  virtualPath="~/MainMasterPage.master"%>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">
 </asp:Content>
@@ -10,7 +11,7 @@
 <br />
     <asp:DropDownList ID="MenuDropDownList" runat="server" AutoPostBack="True" 
     DataSourceID="MenuLinqDataSource" DataTextField="Name" DataValueField="Id" 
-        onselectedindexchanged="MenuDropDownList_SelectedIndexChanged">
+    onselectedindexchanged="MenuDropDownList_SelectedIndexChanged">
 </asp:DropDownList>
 <asp:LinqDataSource ID="MenuLinqDataSource" runat="server" 
     ContextTypeName="LinqDataClassesDataContext" EntityTypeName="" 
@@ -20,7 +21,8 @@
     </WhereParameters>
 </asp:LinqDataSource>
 <asp:GridView ID="MenuItemGridView" runat="server" AutoGenerateColumns="False" 
-    DataSourceID="MenuItemSqlDataSource" Width="477px">
+    DataSourceID="MenuItemSqlDataSource" Width="477px" 
+        onrowcommand="MenuItemGridView_RowCommand">
     <Columns>
         <asp:BoundField DataField="ImagePath" HeaderText="ImagePath" 
             SortExpression="ImagePath" />
@@ -28,7 +30,8 @@
         <asp:BoundField DataField="Description" HeaderText="Description" 
             SortExpression="Description" />
         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-        <asp:ButtonField ButtonType="Button" Text="Add to Order" />
+        <asp:ButtonField ButtonType="Button" Text="Add to Order" 
+            CommandName="AddItem" />
     </Columns>
 </asp:GridView>
 <asp:SqlDataSource ID="MenuItemSqlDataSource" runat="server" 

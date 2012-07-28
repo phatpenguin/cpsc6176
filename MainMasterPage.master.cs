@@ -29,4 +29,9 @@ public partial class MainMasterPage : System.Web.UI.MasterPage
         LoginTimeLabel.Text = string.Format("{0}:{1:00}", elapsed.Minutes, elapsed.Seconds);
         
     }
+
+    public void AddItem(MenuItem menuItem)
+    {
+        OrderDetails1.AddItem(menuItem.Name, menuItem.Price, 1);
+    }
 }
