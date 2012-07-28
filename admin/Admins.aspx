@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Admins.aspx.cs" Inherits="admin_admins" %>
+﻿<%@ Page Title="Admins Page" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Admins.aspx.cs" Inherits="admin_admins" %>
 
 <%@ Register src="../Controls/adminXML.ascx" tagname="adminXML" tagprefix="uc1" %>
 
