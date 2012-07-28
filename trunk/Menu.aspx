@@ -24,6 +24,8 @@
     DataSourceID="MenuItemSqlDataSource" Width="477px" 
         onrowcommand="MenuItemGridView_RowCommand">
     <Columns>
+        <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" 
+            ReadOnly="True" SortExpression="Id" Visible="False" />
         <asp:BoundField DataField="ImagePath" HeaderText="ImagePath" 
             SortExpression="ImagePath" />
         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
@@ -36,7 +38,8 @@
 </asp:GridView>
 <asp:SqlDataSource ID="MenuItemSqlDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:_6176_su12_TeamCConnectionString %>" 
-    SelectCommand="SELECT MenuItem.Name, MenuItem.Description, MenuItem.Price, MenuItem.ImagePath FROM Menu INNER JOIN MenuItemMap ON Menu.Id = MenuItemMap.MenuID INNER JOIN MenuItem ON MenuItemMap.MenuItemID = MenuItem.Id WHERE (Menu.Id = @MenuId) AND (MenuItem.IsActive = 1)">
+    
+        SelectCommand="SELECT MenuItem.Name, MenuItem.Description, MenuItem.Price, MenuItem.ImagePath, MenuItem.Id FROM Menu INNER JOIN MenuItemMap ON Menu.Id = MenuItemMap.MenuID INNER JOIN MenuItem ON MenuItemMap.MenuItemID = MenuItem.Id WHERE (Menu.Id = @MenuId) AND (MenuItem.IsActive = 1)">
     <SelectParameters>
         <asp:ControlParameter ControlID="MenuDropDownList" Name="MenuId" 
             PropertyName="SelectedValue" />
