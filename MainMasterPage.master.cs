@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using WcfServiceReference;
 
 public partial class MainMasterPage : System.Web.UI.MasterPage
 {
@@ -51,7 +52,8 @@ public partial class MainMasterPage : System.Web.UI.MasterPage
 
     public void AddItem(WcfServiceReference.MenuItem menuItem)
     {
-        OrderDetails1.AddItem(menuItem.Name, menuItem.Price, 1);
+        //OrderDetails1.AddItem(menuItem.Name, menuItem.Price, 1);
+        OrderDetails1.AddItem(menuItem);
     }
 
 }

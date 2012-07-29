@@ -31,32 +31,34 @@ public class ClsItem
 
 public static class classClsItemsManager
 {
-    private static List<ClsItem> Items = new List<ClsItem>();
-
     private static decimal SubTotal;
     private static decimal Total;
-    private static decimal TAX = .10m;
+    public static decimal TAX = .10m;
     public static int ItemToDelete { get; set; }
+    public static WcfServiceReference.Order CurrentOrder { get; set; }
 
-    public static void AddItem(string name, decimal price, int qty)
+    static classClsItemsManager()
     {
-        //TODO: From database getItemPrice(name);
-        ClsItem newItem = new ClsItem(name, price, qty);
-        Items.Add(newItem);
-
+        //TODO MAKE THIS USE THE LOGGED IN USERID
+        CurrentOrder = new WcfServiceReference.Order(){UserId = 1, Number = 123, DinerTypeId = 1, OrderStateId = 1, OrderTypeId = 1, PaymentStateId = 1, Date = DateTime.Now};
     }
 
-    public static List<ClsItem> getItems()
+    public static void AddItem(WcfServiceReference.MenuItem menuItem)
     {
-        return Items;
+        CurrentOrder.OrderItems.Add(new WcfServiceReference.OrderItem() { Name = menuItem.Name,MenuItemId = menuItem.Id, Quantity = 1, UnitPrice = menuItem.Price, UnitTax = menuItem.Price * TAX });
+    }
+
+    public static List<WcfServiceReference.OrderItem> getItems()
+    {
+        return CurrentOrder.OrderItems.ToList();
     }
 
     public static string getSubTotal()
     {
         SubTotal = 0.0m;
-        foreach (ClsItem Item in Items)
+        foreach (var oi in CurrentOrder.OrderItems)
         {
-            SubTotal += (Item.Price * Item.Quantity);
+            SubTotal += (oi.UnitPrice * oi.Quantity);
         }
 
         return SubTotal.ToString("C2");
@@ -65,9 +67,9 @@ public static class classClsItemsManager
     {
         //TODO: Remove hard coded
         decimal tempTotal = 0.0m;
-        foreach (ClsItem Item in Items)
+        foreach (var oi in CurrentOrder.OrderItems)
         {
-            tempTotal += (Item.Price * Item.Quantity);
+            tempTotal += (oi.UnitPrice * oi.Quantity);
         }
         return (tempTotal * TAX).ToString("C2");
     }
@@ -80,19 +82,13 @@ public static class classClsItemsManager
     }
     public static void deleteItem()
     {
-        Items.RemoveAt(ItemToDelete);
+        CurrentOrder.OrderItems.RemoveAt(ItemToDelete);
 
     }
 
     public static void deleteAllItems()
     {
-        if (Items.Count > 0)
-        {
-            do
-            {
-                Items.Clear();
-            } while (Items.Count > 0);
-        }
+        CurrentOrder.OrderItems.Clear();
 
         Total = 0.0m;
         SubTotal = 0.0m;
