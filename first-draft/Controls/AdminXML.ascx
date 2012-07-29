@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AdminXML.ascx.cs" Inherits="admin_adminXML" %>
+<asp:Xml ID="Xml1" runat="server" DocumentSource="~/admin/admins.xml" TransformSource="~/admin/admins.xslt"></asp:Xml>

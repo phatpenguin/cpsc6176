@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<admins>
+    <admin>
+        <FirstName>Kuljit</FirstName>
+        <LastName>Dod</LastName>
+    </admin>
+    <admin>
+        <FirstName>Scott</FirstName>
+        <LastName>Leonard</LastName>
+    </admin>
+    <admin>
+        <FirstName>Rodrigo</FirstName>
+        <LastName>Sardinas</LastName>
+    </admin>
+</admins>
