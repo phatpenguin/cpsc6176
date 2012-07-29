@@ -99,4 +99,23 @@ img.family-pic
    border-width:thick;
 }
 
+ .ImageSpecials
+{
+    padding: 0px;
+    margin: 0px;
+    height: 120px;
+    width: 120px;
+    
+}
 
+#SpecialsBar
+{
+    background:Red;
+    width:600px;
+    height:40px;
+    margin-left:40px;
+    color:White;
+    text-align: center;
+   
+}
+ 
