@@ -4,7 +4,7 @@
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" Runat="Server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
-    <asp:Label ID="SearchLabel" runat="server" Text="Search for a menu item:"></asp:Label>
+    <asp:Label ID="SearchLabel" runat="server" Text="Search for a menu item(e.g. Fries:"></asp:Label>
 <asp:TextBox ID="MenuSearchTextBox" runat="server"></asp:TextBox>
 <asp:Button ID="MenuSearchButton" runat="server" 
     onclick="MenuSearchButton_Click" Text="Search" />
