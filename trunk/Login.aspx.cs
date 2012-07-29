@@ -11,4 +11,8 @@ public partial class Login : System.Web.UI.Page
     {
 
     }
+    protected void Login1_LoggedIn(object sender, EventArgs e)
+    {
+
+    }
 }

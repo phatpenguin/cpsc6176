@@ -22,12 +22,12 @@
 </asp:LinqDataSource>
 <asp:GridView ID="MenuItemGridView" runat="server" AutoGenerateColumns="False" 
     DataSourceID="MenuItemSqlDataSource" Width="477px" 
-        onrowcommand="MenuItemGridView_RowCommand">
+        onrowcommand="MenuItemGridView_RowCommand" CellPadding="4" 
+        ForeColor="#333333" GridLines="None">
+    <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" 
-            ReadOnly="True" SortExpression="Id" Visible="False" />
-        <asp:BoundField DataField="ImagePath" HeaderText="ImagePath" 
-            SortExpression="ImagePath" />
+            ReadOnly="True" SortExpression="Id" />
         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
         <asp:BoundField DataField="Description" HeaderText="Description" 
             SortExpression="Description" />
@@ -35,6 +35,15 @@
         <asp:ButtonField ButtonType="Button" Text="Add to Order" 
             CommandName="AddItem" />
     </Columns>
+    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+    <SortedDescendingHeaderStyle BackColor="#820000" />
 </asp:GridView>
 <asp:SqlDataSource ID="MenuItemSqlDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:_6176_su12_TeamCConnectionString %>" 

@@ -5,8 +5,7 @@ using WcfServiceReference;
 
 public partial class Menu : System.Web.UI.Page
 {
-    //TODO: Please make sure to change the service port to your local host port ***************************************
-    private rub_bbqEntities entities = new rub_bbqEntities(new Uri("http://localhost:11637/RubBBQWebsite/WcfDataService.svc/"));
+    private rub_bbqEntities entities = new rub_bbqEntities(new Uri(System.Web.Configuration.WebConfigurationManager.AppSettings["WcfServiceUri"]));
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -30,7 +29,7 @@ public partial class Menu : System.Web.UI.Page
             int index = Convert.ToInt32(e.CommandArgument);
             int menuItemId = Convert.ToInt32(MenuItemGridView.Rows[index].Cells[0].Text);
 
-            WcfServiceReference.MenuItem menuItem = entities.MenuItems.FirstOrDefault(x => x.Id == menuItemId);
+            WcfServiceReference.MenuItem menuItem = entities.MenuItems.Where(x => x.Id == menuItemId).FirstOrDefault();
 
             Master.AddItem(menuItem);
         }

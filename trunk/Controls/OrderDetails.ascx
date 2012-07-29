@@ -27,7 +27,7 @@
                     <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                    <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("UnitPrice") %>' />
                 </td>
                 
             </tr>
@@ -103,6 +103,12 @@
 </td>
 </tr>
 </table>
+
+
+<p>
+    <asp:Button ID="PlaceOrderButton" runat="server" 
+        onclick="PlaceOrderButton_Click" Text="Place Order" />
+</p>
 
 
 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"

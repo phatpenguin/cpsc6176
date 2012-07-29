@@ -17,7 +17,7 @@
                 CreateUserText="Create an Account" CreateUserUrl="~/CreateAccount.aspx" 
                 BackColor="#FFFBD6" BorderColor="#FFDFAD" BorderPadding="4" BorderStyle="Solid" 
                 BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" 
-                TextLayout="TextOnTop">
+                TextLayout="TextOnTop" onloggedin="Login1_LoggedIn">
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
             <LoginButtonStyle BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" 
                 BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" />
