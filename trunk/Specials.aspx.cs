@@ -9,6 +9,7 @@ public partial class Specials : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.FindControl("OrderDetails1").Visible = false;
 
     }
 }
