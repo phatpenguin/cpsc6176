@@ -40,7 +40,8 @@
                     </asp:Menu>
                 </td>
                 <td>
-                <asp:Image ID="Image1" runat="server" Width="80px" Height="80px" BorderStyle="Solid" />
+                <asp:Image ID="Image1" runat="server" Width="80px" Height="80px" 
+                        BorderStyle="Solid" ImageUrl="~/Images/MyPlayers/Profile-Placeholder.png" />
                 <asp:LoginView ID="LoginView1" runat="server" >
                     <AnonymousTemplate>
                      <br /><asp:Literal ID="Literal1" runat="server">Who is your favourite Cubs player? 
