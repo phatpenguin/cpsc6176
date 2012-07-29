@@ -1,6 +1,18 @@
 ﻿body 
 {
-    background-color: white;
+   background-image: linear-gradient(bottom, rgb(239,204,120) 8%, rgb(252,255,158) 54%);
+    background-image: -o-linear-gradient(bottom, rgb(239,204,120) 8%, rgb(252,255,158) 54%);
+    background-image: -moz-linear-gradient(bottom, rgb(239,204,120) 8%, rgb(252,255,158) 54%);
+    background-image: -webkit-linear-gradient(bottom, rgb(239,204,120) 8%, rgb(252,255,158) 54%);
+    background-image: -ms-linear-gradient(bottom, rgb(239,204,120) 8%, rgb(252,255,158) 54%);
+
+    background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.08, rgb(239,204,120)),
+	color-stop(0.54, rgb(252,255,158))
+);
     font-family:Microsoft Sans Serif;
     font-size:medium;
     color: Black;
