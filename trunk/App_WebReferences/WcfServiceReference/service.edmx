@@ -241,11 +241,10 @@
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-        <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-        <Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
         <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
         <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
         <Property Name="Birthday" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="asp_user_id" Type="Edm.Guid" Nullable="true" />
         <NavigationProperty Name="Addresses" Relationship="rub_bbqModel.FK_Address_User" FromRole="User" ToRole="Address" />
         <NavigationProperty Name="Orders" Relationship="rub_bbqModel.FK_Order_User" FromRole="User" ToRole="Order" />
         <NavigationProperty Name="PhoneNumbers" Relationship="rub_bbqModel.FK_PhoneNumber_User" FromRole="User" ToRole="PhoneNumber" />

@@ -93,6 +93,11 @@ public static class classClsItemsManager
         Total = 0.0m;
         SubTotal = 0.0m;
     }
+
+    public static void createNewOrder()
+    {
+        CurrentOrder = new WcfServiceReference.Order() { UserId = 1, Number = 123, DinerTypeId = 1, OrderStateId = 1, OrderTypeId = 1, PaymentStateId = 1, Date = DateTime.Now };
+    }
 }
 
 

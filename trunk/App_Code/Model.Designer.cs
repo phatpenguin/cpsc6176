@@ -3402,16 +3402,12 @@ namespace rub_bbqModel
         /// Create a new User object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="username">Initial value of the Username property.</param>
-        /// <param name="password">Initial value of the Password property.</param>
         /// <param name="firstName">Initial value of the FirstName property.</param>
         /// <param name="lastName">Initial value of the LastName property.</param>
-        public static User CreateUser(global::System.Int32 id, global::System.String username, global::System.String password, global::System.String firstName, global::System.String lastName)
+        public static User CreateUser(global::System.Int32 id, global::System.String firstName, global::System.String lastName)
         {
             User user = new User();
             user.Id = id;
-            user.Username = username;
-            user.Password = password;
             user.FirstName = firstName;
             user.LastName = lastName;
             return user;
@@ -3446,54 +3442,6 @@ namespace rub_bbqModel
         private global::System.Int32 _Id;
         partial void OnIdChanging(global::System.Int32 value);
         partial void OnIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Username
-        {
-            get
-            {
-                return _Username;
-            }
-            set
-            {
-                OnUsernameChanging(value);
-                ReportPropertyChanging("Username");
-                _Username = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Username");
-                OnUsernameChanged();
-            }
-        }
-        private global::System.String _Username;
-        partial void OnUsernameChanging(global::System.String value);
-        partial void OnUsernameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Password
-        {
-            get
-            {
-                return _Password;
-            }
-            set
-            {
-                OnPasswordChanging(value);
-                ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Password");
-                OnPasswordChanged();
-            }
-        }
-        private global::System.String _Password;
-        partial void OnPasswordChanging(global::System.String value);
-        partial void OnPasswordChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3566,6 +3514,30 @@ namespace rub_bbqModel
         private Nullable<global::System.DateTime> _Birthday;
         partial void OnBirthdayChanging(Nullable<global::System.DateTime> value);
         partial void OnBirthdayChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Guid> asp_user_id
+        {
+            get
+            {
+                return _asp_user_id;
+            }
+            set
+            {
+                Onasp_user_idChanging(value);
+                ReportPropertyChanging("asp_user_id");
+                _asp_user_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("asp_user_id");
+                Onasp_user_idChanged();
+            }
+        }
+        private Nullable<global::System.Guid> _asp_user_id;
+        partial void Onasp_user_idChanging(Nullable<global::System.Guid> value);
+        partial void Onasp_user_idChanged();
 
         #endregion
     

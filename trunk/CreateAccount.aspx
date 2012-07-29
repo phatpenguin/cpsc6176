@@ -5,6 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Create Account</title>
+    <style type="text/css">
+        .style1
+        {
+            height: 16px;
+        }
+        .style2
+        {
+            height: 28px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,7 +22,8 @@
     
         <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#FFFBD6" 
             BorderColor="#FFDFAD" BorderStyle="Solid" BorderWidth="1px" 
-            Font-Names="Verdana" Font-Size="0.8em">
+            Font-Names="Verdana" Font-Size="0.8em" 
+            oncreateduser="CreateUserWizard1_CreatedUser">
             <ContinueButtonStyle BackColor="White" BorderColor="#CC9966" 
                 BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
                 ForeColor="#990000" />
@@ -26,19 +37,42 @@
                         <table style="background-color:#FFFBD6;font-family:Verdana;font-size:100%;">
                             <tr>
                                 <td align="center" colspan="2" 
-                                    style="color:White;background-color:#990000;font-weight:bold;">
+                                    style="color:White;background-color:#990000;font-weight:bold;" 
+                                    class="style1">
                                     Sign Up for Your New Account</td>
                             </tr>
                             <tr>
-                                <td align="right">
+                                <td align="right" class="style2">
                                     <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">UserName(e.g.JohnSmith):</asp:Label>
                                 </td>
-                                <td>
+                                <td class="style2">
                                     <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
                                         ControlToValidate="UserName" ErrorMessage="User Name is required." 
                                         ToolTip="User Name is required." ValidationGroup="CreateUserWizard1" 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    First Name:</td>
+                                <td>
+                                    <asp:TextBox ID="FirstNameTextBox" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" 
+                                        ControlToValidate="FirstNameTextBox" ErrorMessage="First Name is required." 
+                                        ForeColor="Red" ToolTip="First Name is required." 
+                                        ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="style1">
+                                    Last Name:</td>
+                                <td class="style1">
+                                    <asp:TextBox ID="LastNameTextBox" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" 
+                                        ControlToValidate="LastNameTextBox" ErrorMessage="Last Name is required." 
+                                        ForeColor="Red" ToolTip="Last Name is required." 
+                                        ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -101,6 +135,13 @@
                                         ControlToValidate="Answer" ErrorMessage="Security answer is required." 
                                         ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1" 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    Birthday:</td>
+                                <td>
+                                    <asp:Calendar ID="BirthdayCalendar" runat="server"></asp:Calendar>
                                 </td>
                             </tr>
                             <tr>
