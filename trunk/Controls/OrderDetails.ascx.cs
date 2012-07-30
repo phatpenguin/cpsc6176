@@ -69,9 +69,9 @@ public partial class OrderDetails : System.Web.UI.UserControl
             classClsItemsManager.createNewOrder();
             updateTextFields();
             ListView1.DataBind();
+            Response.Redirect("~/OrderComplete.aspx");
         } else
         {
-            Response.Write("<script type=\"text/JavaScript\">alert('hello world');</script>");
             Response.Redirect("~/Login.aspx");
         }
     }

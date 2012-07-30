@@ -16,13 +16,13 @@
     </asp:ScriptManager>
    
                        
-        <table style="width: 100%;">
+        <table style="width: 100%;" class="masterTable">
             <tr>
-                <td>
+                <td class="masterLeftColumn">
                     <asp:Image ID="LogoImage" runat="server" Height="111px" 
                         ImageUrl="~/Images/bbqrubcompanylogo.jpg" />
                 </td>
-                <td>
+                <td align="left">
                     <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" 
                         ShowStartingNode="True" />
                     <asp:Menu ID="MainNavigationMenu" runat="server" BackColor="#FFFBD6" 
@@ -39,7 +39,7 @@
                         <StaticSelectedStyle BackColor="#FFCC66" />
                     </asp:Menu>
                 </td>
-                <td>
+                <td class="masterRightColumn">
                 <asp:Image ID="Image1" runat="server" Width="80px" Height="80px" 
                         BorderStyle="Solid" ImageUrl="~/Images/MyPlayers/Profile-Placeholder.png" />
                 <asp:LoginView ID="LoginView1" runat="server" >
@@ -87,7 +87,7 @@
                         </asp:UpdatePanel>
                     </LoggedInTemplate>
                 </asp:LoginView>
-                   <%-- <asp:LinkButton ID="LoginLinkButton" runat="server" 
+                    <%-- <asp:LinkButton ID="LoginLinkButton" runat="server" 
                         onclick="LoginLinkButton_Click">Log In</asp:LinkButton>
                     <asp:Panel ID="WelcomeMessagePanel" runat="server" Visible="False">
                         Welcome,
@@ -98,29 +98,30 @@
             </tr>
 
             <tr>
-                <td colspan="3">
+                <td colspan="3" class="masterWideColumnLeftAlign">
                     <asp:SiteMapPath ID="SiteMapPath" runat="server">
                     </asp:SiteMapPath>
                 </td>
             </tr>
 
             <tr>
-                <td colspan="2">
+                <td colspan="2" class="masterLeftColumn">
         <asp:ContentPlaceHolder id="BodyContentPlaceHolder" runat="server">
         
             
         
         </asp:ContentPlaceHolder>
                 </td>
-                <td>
+                <td class="masterRightColumn">
                     <uc1:OrderDetails ID="OrderDetails1" runat="server" />
                 </td>
             </tr>
+            <tr>
+                <td colspan="3" class="masterWideColumnCenterAlign">
+                    <asp:Literal ID="CopyrightLiteral" runat="server">Copyright 2012 Rub BBQ Company</asp:Literal>
+                </td>
+            </tr>
         </table>
-    <div>
-        <br />
-        <asp:Literal ID="Literal" runat="server">Copyright 2012 Rub BBQ Company</asp:Literal>
-    </div>
     </form>
 </body>
 </html>

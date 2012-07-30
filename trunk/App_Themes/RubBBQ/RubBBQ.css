@@ -130,4 +130,22 @@ img.family-pic
     text-align: center;
    
 }
+
+td.masterLeftColumn {
+    width: 90%;
+}
+
+td.masterRightColumn {
+    width: 10%;
+}
+
+td.masterWideColumnCenterAlign {
+    width: 100%;
+    text-align: center;
+}
+
+td.masterWideColumnLeftAlign {
+    width: 100%;
+    text-align: left;
+}
  
