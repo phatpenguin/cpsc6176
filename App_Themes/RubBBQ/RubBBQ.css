@@ -133,10 +133,14 @@ img.family-pic
 
 td.masterLeftColumn {
     width: 90%;
+    vertical-align: top;
+    text-align: left;
 }
 
 td.masterRightColumn {
     width: 10%;
+    vertical-align: top;
+    text-align: left;
 }
 
 td.masterWideColumnCenterAlign {
