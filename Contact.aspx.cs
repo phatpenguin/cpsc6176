@@ -57,8 +57,11 @@ public partial class Contact : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        SendUserMail(FromEmailTextBox.Text, "cpsc6176@googlegroups.com" , MessageTextBox.Text, 
-            FromTextBox.Text, "Contact from customer");
+        if (SendUserMail(FromEmailTextBox.Text, "cpsc6176@googlegroups.com", MessageTextBox.Text,
+            FromTextBox.Text, "Contact from customer") == 0)
+        {
+            Response.Redirect("~/ErrorPages/500Error.aspx");
+        }
     }
 }
 
